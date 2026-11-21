@@ -2,6 +2,7 @@ import json
 import logging
 import random
 import re
+import string
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
@@ -55,6 +56,19 @@ def parse_text_find_number(text):
     except Exception as e:
         logger.error(f"Answer Parsing Error: {e}")
         return -1
+
+def parse_text_find_answer(text):
+    parsed = parse_json(text)
+
+    if not isinstance(parsed, dict):
+        return None
+
+    answer = parsed.get("final_answer")
+
+    if answer is None:
+        return None
+
+    return str(answer).strip().lower()
 
 
 def parse_text_find_confidence(text):
@@ -118,13 +132,17 @@ def generate_final_answer(question, caption, num_frames):
     prompt = f"""
     Given a video that has {num_frames} frames, the frames are decoded at 1 fps. Given the following descriptions of the sampled frames in the video:
     {caption}
-    #C to denote the sentence is an action done by the camera wearer (the person who recorded the video while wearing a camera on their head).
-    #O to denote that the sentence is an action done by someone other than the camera wearer.
     Please answer the following question: 
     ``` 
     {question}
     ``` 
-    Please think carefully and write the best answer index in Json format {answer_format}. Note that only one answer is returned for the question, and you must select one answer index from the candidates.
+    Answer with the shortest accurate word or phrase.
+    Do not include explanations or additional details.
+    If the evidence is insufficient, make your best
+    evidence-supported prediction.
+
+    Return a JSON object:
+    {{"final_answer": "short answer"}}
     """
     system_prompt = "You are a helpful assistant designed to output JSON."
     response = get_llm_response(system_prompt, prompt, json_format=True)
@@ -191,16 +209,21 @@ def ask_gpt_caption(question, caption, num_frames):
     prompt = f"""
     Given a video that has {num_frames} frames, the frames are decoded at 1 fps. Given the following descriptions of five uniformly sampled frames in the video:
     {caption}
-    #C to denote the sentence is an action done by the camera wearer (the person who recorded the video while wearing a camera on their head).
-    #O to denote that the sentence is an action done by someone other than the camera wearer.
     Please answer the following question: 
     ``` 
     {question}
     ``` 
-    Please think step-by-step and write the best answer index in Json format {answer_format}. Note that only one answer is returned for the question.
+    Answer with the shortest accurate word or phrase.
+    Do not include explanations or additional details.
+    If the evidence is insufficient, make your best
+    evidence-supported prediction.
+
+    Return a JSON object:
+    {{"final_answer": "short answer"}}
     """
+    # Please think step-by-step and write the best answer index in Json format {answer_format}. Note that only one answer is returned for the question.
     system_prompt = "You are a helpful assistant."
-    response = get_llm_response(system_prompt, prompt, json_format=False)
+    response = get_llm_response(system_prompt, prompt, json_format=True)
     return prompt, response
 
 
@@ -209,13 +232,17 @@ def ask_gpt_caption_step(question, caption, num_frames):
     prompt = f"""
     Given a video that has {num_frames} frames, the frames are decoded at 1 fps. Given the following descriptions of the sampled frames in the video:
     {caption}
-    #C to denote the sentence is an action done by the camera wearer (the person who recorded the video while wearing a camera on their head).
-    #O to denote that the sentence is an action done by someone other than the camera wearer.
     Please answer the following question: 
     ``` 
     {question}
     ``` 
-    Please think step-by-step and write the best answer index in Json format {answer_format}. Note that only one answer is returned for the question.
+    Answer with the shortest accurate word or phrase.
+    Do not include explanations or additional details.
+    If the evidence is insufficient, make your best
+    evidence-supported prediction.
+
+    Return a JSON object:
+    {{"final_answer": "short answer"}}
     """
     system_prompt = "You are a helpful assistant."
     response = get_llm_response(system_prompt, prompt, json_format=False)
@@ -228,6 +255,25 @@ def read_caption(captions, sample_idx):
         video_caption[f"frame {idx}"] = captions[idx - 1]
     return video_caption
 
+def normalize_answer(answer):
+    if answer is None:
+        return ""
+
+    answer = answer.lower().strip()
+    answer = answer.translate(
+        str.maketrans("", "", string.punctuation)
+    )
+
+    answer = re.sub(r"\b(a|an|the)\b", " ", answer)
+    answer = " ".join(answer.split())
+
+    return answer
+
+def evaluate(ground_truth, prediction):
+    return int(
+        normalize_answer(prediction)
+        == normalize_answer(ground_truth)
+    )
 
 def run_one_question(video_id, ann, caps, logs):
     question = ann["question"]
@@ -245,7 +291,7 @@ def run_one_question(video_id, ann, caps, logs):
     previous_prompt, answer_str = ask_gpt_caption(
         formatted_question, sampled_caps, num_frames
     )
-    answer = parse_text_find_number(answer_str)
+    answer = parse_text_find_answer(answer_str)
     confidence_str = self_eval(previous_prompt, answer_str)
     confidence = parse_text_find_confidence(confidence_str)
 
@@ -274,7 +320,7 @@ def run_one_question(video_id, ann, caps, logs):
             previous_prompt, answer_str = ask_gpt_caption_step(
                 formatted_question, sampled_caps, num_frames
             )
-            answer = parse_text_find_number(answer_str)
+            answer = parse_text_find_answer(answer_str)
             confidence_str = self_eval(previous_prompt, answer_str)
             confidence = parse_text_find_confidence(confidence_str)
         except Exception as e:
@@ -282,7 +328,7 @@ def run_one_question(video_id, ann, caps, logs):
             answer_str = generate_final_answer(
                 formatted_question, sampled_caps, num_frames
             )
-            answer = parse_text_find_number(answer_str)
+            answer = parse_text_find_answer(answer_str)
 
     ### Step 3 ###
     if confidence < 3:
@@ -308,21 +354,22 @@ def run_one_question(video_id, ann, caps, logs):
             answer_str = generate_final_answer(
                 formatted_question, sampled_caps, num_frames
             )
-            answer = parse_text_find_number(answer_str)
+            answer = parse_text_find_answer(answer_str)
         except Exception as e:
             logger.error(f"Step 3 Error: {e}")
             answer_str = generate_final_answer(
                 formatted_question, sampled_caps, num_frames
             )
-            answer = parse_text_find_number(answer_str)
+            answer = parse_text_find_answer(answer_str)
     if answer == -1:
         logger.info("Answer Index Not Found!")
-        answer = random.randint(0, 4)
+        # Fallback short answer
+        answer = "Unknown"
 
     logger.info(f"Finished video: {video_id}/{answer}/{ann['truth']}")
 
     label = int(ann["truth"])
-    corr = int(label == answer)
+    corr = evaluate(label, answer)
     count_frame = len(sample_idx)
 
     logs[video_id] = {
