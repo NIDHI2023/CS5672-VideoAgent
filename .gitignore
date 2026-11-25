@@ -1,4 +1,4 @@
 *.log
-*.json
+# *.json
 *.pyc
-data/
+data/AGQA*
