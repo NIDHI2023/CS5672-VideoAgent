@@ -29,6 +29,18 @@ MODEL_PATH = os.environ.get(
     "/content/models/Qwen2.5-1.5B-Instruct"
 )
 
+FORCE_RETRIEVAL = int(os.environ.get(
+    "FORCE_RETRIEVAL",
+    "0"
+))
+if FORCE_RETRIEVAL:
+  print(f"Using FORCE_RETRIEVAL: {FORCE_RETRIEVAL}")
+
+OUTPUT_FILE = os.environ.get(
+    "OUTPUT_FILE",
+    "egoschema.json"
+)
+
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 DTYPE = torch.float16 if DEVICE == "cuda" else torch.float32
 
@@ -51,28 +63,61 @@ qwen_model.eval()
 print("Qwen model loaded successfully")
 
 # improve parse_json since qwen could be inconsistent
-def parse_json(text):
-    try:
-        return json.loads(text)
-    except (json.JSONDecodeError, TypeError):
-        pass
+import ast
 
+def parse_json(text):
     if not isinstance(text, str):
         return None
 
+    text = text.strip()
+
+    # Parse complete JSON.
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    # Parse complete Python dictionary.
+    try:
+        result = ast.literal_eval(text)
+        if isinstance(result, (dict, list)):
+            return result
+    except (ValueError, SyntaxError):
+        pass
+
+    # Extract nested JSON from surrounding text.
     decoder = json.JSONDecoder()
 
-    for match in re.finditer(r"\{", text):
+    for match in re.finditer(r"[\{\[]", text):
         try:
             result, _ = decoder.raw_decode(
                 text[match.start():]
             )
 
-            if isinstance(result, dict):
+            if isinstance(result, (dict, list)):
                 return result
 
         except json.JSONDecodeError:
             continue
+
+    # Extract Python-style nested dictionaries.
+    for start in re.finditer(r"[\{\[]", text):
+        for end in reversed(
+            list(re.finditer(r"[\}\]]", text))
+        ):
+            if end.start() <= start.start():
+                continue
+
+            candidate = text[start.start():end.end()]
+
+            try:
+                result = ast.literal_eval(candidate)
+
+                if isinstance(result, (dict, list)):
+                    return result
+
+            except (ValueError, SyntaxError):
+                continue
 
     logger.warning("No valid JSON found: %s", text)
     return None
@@ -290,7 +335,7 @@ def run_one_question(video_id, ann, caps, logs):
     confidence = parse_text_find_confidence(confidence_str)
 
     ### Step 2 ###
-    if confidence < 3:
+    if confidence < 3 or FORCE_RETRIEVAL:
         try:
             segment_des = {
                 i + 1: f"{sample_idx[i]}-{sample_idx[i + 1]}"
@@ -319,13 +364,15 @@ def run_one_question(video_id, ann, caps, logs):
             confidence = parse_text_find_confidence(confidence_str)
         except Exception as e:
             logger.error(f"Step 2 Error: {e}")
+            print(f"[Step 2] Retrieval failed: {e}", flush=True)
             answer_str = generate_final_answer(
                 formatted_question, sampled_caps, num_frames
             )
             answer = parse_text_find_number(answer_str)
 
     ### Step 3 ###
-    if confidence < 3:
+    if confidence < 3 or FORCE_RETRIEVAL:
+        print("step3")
         try:
             segment_des = {
                 i + 1: f"{sample_idx[i]}-{sample_idx[i + 1]}"
@@ -351,6 +398,7 @@ def run_one_question(video_id, ann, caps, logs):
             answer = parse_text_find_number(answer_str)
         except Exception as e:
             logger.error(f"Step 3 Error: {e}")
+            print(f"[Step 3] Retrieval failed: {e}", flush=True)
             answer_str = generate_final_answer(
                 formatted_question, sampled_caps, num_frames
             )
@@ -378,7 +426,7 @@ def main():
     data_path = Path("data") / "EgoSchema"
     input_ann_file = data_path /"subset_anno.json"
     all_cap_file = data_path / "lavila_subset.json"
-    json_file_name = data_path / "egoschema_subset_qwen.json"
+    json_file_name = data_path / OUTPUT_FILE
 
     random.seed(42)
     np.random.seed(42)

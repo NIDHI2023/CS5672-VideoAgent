@@ -3,13 +3,91 @@ from typing import List
 
 import numpy as np
 
-cache_clip = pickle.load(open("cache_clip.pkl", "rb"))
+import os
+import pickle
+from typing import List
+
+import numpy as np
+
+from clip_text_encoder import CLIPTextEncoder
+
+
+ORIGINAL_CACHE_PATH = "cache_clip.pkl"
+QWEN_CACHE_PATH = "cache_clip_qwen.pkl"
+
+with open(ORIGINAL_CACHE_PATH, "rb") as f:
+    cache_clip = pickle.load(f)
+
+if os.path.exists(QWEN_CACHE_PATH):
+    with open(QWEN_CACHE_PATH, "rb") as f:
+        qwen_cache = pickle.load(f)
+else:
+    qwen_cache = {}
+
+clip_encoder = None
+
+
+def get_clip_encoder():
+    global clip_encoder
+
+    if clip_encoder is None:
+        clip_encoder = CLIPTextEncoder()
+
+    return clip_encoder
+
+
+def save_qwen_cache():
+    temp_path = QWEN_CACHE_PATH + ".tmp"
+
+    with open(temp_path, "wb") as f:
+        pickle.dump(qwen_cache, f)
+
+    os.replace(temp_path, QWEN_CACHE_PATH)
 
 
 def get_embeddings(inputs: List[str]) -> np.ndarray:
-    embeddings = [cache_clip[input] for input in inputs]
-    return np.array(embeddings)
 
+    missing = list(dict.fromkeys(
+        text for text in inputs
+        if text not in cache_clip
+        and text not in qwen_cache
+    ))
+
+    print(
+        f"[CLIP] Queries: {len(inputs)} | "
+        f"New descriptions: {len(missing)}",
+        flush=True
+    )
+
+    if missing:
+        encoder = get_clip_encoder()
+        embeddings = encoder.encode(missing)
+
+        assert embeddings.shape == (
+            len(missing), 1280
+        )
+
+        for text, embedding in zip(missing, embeddings):
+            qwen_cache[text] = embedding
+
+        save_qwen_cache()
+
+    results = []
+
+    for text in inputs:
+        if text in cache_clip:
+            embedding = cache_clip[text]
+        else:
+            embedding = qwen_cache[text]
+
+        results.append(
+            np.asarray(
+                embedding,
+                dtype=np.float32
+            ).reshape(-1)
+        )
+
+    return np.stack(results)
 
 def frame_retrieval_seg_ego(descriptions, video_id, sample_idx):
     frame_embeddings = np.load(f"ego_features_448/{video_id}.npy")
