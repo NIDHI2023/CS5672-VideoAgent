@@ -1,0 +1,817 @@
+{
+  "136V6": [
+    {
+      "frame_index": 1,
+      "timestamp_seconds": 0.0,
+      "path": "/content/charades_frames/136V6/0000.jpg"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_seconds": 1.0,
+      "path": "/content/charades_frames/136V6/0001.jpg"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_seconds": 2.0,
+      "path": "/content/charades_frames/136V6/0002.jpg"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_seconds": 3.0,
+      "path": "/content/charades_frames/136V6/0003.jpg"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_seconds": 4.0,
+      "path": "/content/charades_frames/136V6/0004.jpg"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_seconds": 5.0,
+      "path": "/content/charades_frames/136V6/0005.jpg"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_seconds": 6.0,
+      "path": "/content/charades_frames/136V6/0006.jpg"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_seconds": 7.0,
+      "path": "/content/charades_frames/136V6/0007.jpg"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_seconds": 8.0,
+      "path": "/content/charades_frames/136V6/0008.jpg"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_seconds": 9.0,
+      "path": "/content/charades_frames/136V6/0009.jpg"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_seconds": 10.0,
+      "path": "/content/charades_frames/136V6/0010.jpg"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_seconds": 11.0,
+      "path": "/content/charades_frames/136V6/0011.jpg"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_seconds": 12.0,
+      "path": "/content/charades_frames/136V6/0012.jpg"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_seconds": 13.0,
+      "path": "/content/charades_frames/136V6/0013.jpg"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_seconds": 14.0,
+      "path": "/content/charades_frames/136V6/0014.jpg"
+    },
+    {
+      "frame_index": 16,
+      "timestamp_seconds": 15.0,
+      "path": "/content/charades_frames/136V6/0015.jpg"
+    },
+    {
+      "frame_index": 17,
+      "timestamp_seconds": 16.0,
+      "path": "/content/charades_frames/136V6/0016.jpg"
+    },
+    {
+      "frame_index": 18,
+      "timestamp_seconds": 17.0,
+      "path": "/content/charades_frames/136V6/0017.jpg"
+    },
+    {
+      "frame_index": 19,
+      "timestamp_seconds": 18.0,
+      "path": "/content/charades_frames/136V6/0018.jpg"
+    },
+    {
+      "frame_index": 20,
+      "timestamp_seconds": 19.0,
+      "path": "/content/charades_frames/136V6/0019.jpg"
+    },
+    {
+      "frame_index": 21,
+      "timestamp_seconds": 20.0,
+      "path": "/content/charades_frames/136V6/0020.jpg"
+    },
+    {
+      "frame_index": 22,
+      "timestamp_seconds": 21.0,
+      "path": "/content/charades_frames/136V6/0021.jpg"
+    },
+    {
+      "frame_index": 23,
+      "timestamp_seconds": 22.0,
+      "path": "/content/charades_frames/136V6/0022.jpg"
+    },
+    {
+      "frame_index": 24,
+      "timestamp_seconds": 23.0,
+      "path": "/content/charades_frames/136V6/0023.jpg"
+    },
+    {
+      "frame_index": 25,
+      "timestamp_seconds": 24.0,
+      "path": "/content/charades_frames/136V6/0024.jpg"
+    },
+    {
+      "frame_index": 26,
+      "timestamp_seconds": 25.0,
+      "path": "/content/charades_frames/136V6/0025.jpg"
+    },
+    {
+      "frame_index": 27,
+      "timestamp_seconds": 26.0,
+      "path": "/content/charades_frames/136V6/0026.jpg"
+    },
+    {
+      "frame_index": 28,
+      "timestamp_seconds": 27.0,
+      "path": "/content/charades_frames/136V6/0027.jpg"
+    },
+    {
+      "frame_index": 29,
+      "timestamp_seconds": 28.0,
+      "path": "/content/charades_frames/136V6/0028.jpg"
+    },
+    {
+      "frame_index": 30,
+      "timestamp_seconds": 29.0,
+      "path": "/content/charades_frames/136V6/0029.jpg"
+    },
+    {
+      "frame_index": 31,
+      "timestamp_seconds": 30.0,
+      "path": "/content/charades_frames/136V6/0030.jpg"
+    },
+    {
+      "frame_index": 32,
+      "timestamp_seconds": 31.0,
+      "path": "/content/charades_frames/136V6/0031.jpg"
+    },
+    {
+      "frame_index": 33,
+      "timestamp_seconds": 32.0,
+      "path": "/content/charades_frames/136V6/0032.jpg"
+    },
+    {
+      "frame_index": 34,
+      "timestamp_seconds": 33.0,
+      "path": "/content/charades_frames/136V6/0033.jpg"
+    },
+    {
+      "frame_index": 35,
+      "timestamp_seconds": 34.0,
+      "path": "/content/charades_frames/136V6/0034.jpg"
+    }
+  ],
+  "4G3ZF": [
+    {
+      "frame_index": 1,
+      "timestamp_seconds": 0.0,
+      "path": "/content/charades_frames/4G3ZF/0000.jpg"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_seconds": 1.0,
+      "path": "/content/charades_frames/4G3ZF/0001.jpg"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_seconds": 2.0,
+      "path": "/content/charades_frames/4G3ZF/0002.jpg"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_seconds": 3.0,
+      "path": "/content/charades_frames/4G3ZF/0003.jpg"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_seconds": 4.0,
+      "path": "/content/charades_frames/4G3ZF/0004.jpg"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_seconds": 5.0,
+      "path": "/content/charades_frames/4G3ZF/0005.jpg"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_seconds": 6.0,
+      "path": "/content/charades_frames/4G3ZF/0006.jpg"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_seconds": 7.0,
+      "path": "/content/charades_frames/4G3ZF/0007.jpg"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_seconds": 8.0,
+      "path": "/content/charades_frames/4G3ZF/0008.jpg"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_seconds": 9.0,
+      "path": "/content/charades_frames/4G3ZF/0009.jpg"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_seconds": 10.0,
+      "path": "/content/charades_frames/4G3ZF/0010.jpg"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_seconds": 11.0,
+      "path": "/content/charades_frames/4G3ZF/0011.jpg"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_seconds": 12.0,
+      "path": "/content/charades_frames/4G3ZF/0012.jpg"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_seconds": 13.0,
+      "path": "/content/charades_frames/4G3ZF/0013.jpg"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_seconds": 14.0,
+      "path": "/content/charades_frames/4G3ZF/0014.jpg"
+    },
+    {
+      "frame_index": 16,
+      "timestamp_seconds": 15.0,
+      "path": "/content/charades_frames/4G3ZF/0015.jpg"
+    },
+    {
+      "frame_index": 17,
+      "timestamp_seconds": 16.0,
+      "path": "/content/charades_frames/4G3ZF/0016.jpg"
+    },
+    {
+      "frame_index": 18,
+      "timestamp_seconds": 17.0,
+      "path": "/content/charades_frames/4G3ZF/0017.jpg"
+    },
+    {
+      "frame_index": 19,
+      "timestamp_seconds": 18.0,
+      "path": "/content/charades_frames/4G3ZF/0018.jpg"
+    },
+    {
+      "frame_index": 20,
+      "timestamp_seconds": 19.0,
+      "path": "/content/charades_frames/4G3ZF/0019.jpg"
+    },
+    {
+      "frame_index": 21,
+      "timestamp_seconds": 20.0,
+      "path": "/content/charades_frames/4G3ZF/0020.jpg"
+    },
+    {
+      "frame_index": 22,
+      "timestamp_seconds": 21.0,
+      "path": "/content/charades_frames/4G3ZF/0021.jpg"
+    },
+    {
+      "frame_index": 23,
+      "timestamp_seconds": 22.0,
+      "path": "/content/charades_frames/4G3ZF/0022.jpg"
+    },
+    {
+      "frame_index": 24,
+      "timestamp_seconds": 23.0,
+      "path": "/content/charades_frames/4G3ZF/0023.jpg"
+    },
+    {
+      "frame_index": 25,
+      "timestamp_seconds": 24.0,
+      "path": "/content/charades_frames/4G3ZF/0024.jpg"
+    },
+    {
+      "frame_index": 26,
+      "timestamp_seconds": 25.0,
+      "path": "/content/charades_frames/4G3ZF/0025.jpg"
+    },
+    {
+      "frame_index": 27,
+      "timestamp_seconds": 26.0,
+      "path": "/content/charades_frames/4G3ZF/0026.jpg"
+    },
+    {
+      "frame_index": 28,
+      "timestamp_seconds": 27.0,
+      "path": "/content/charades_frames/4G3ZF/0027.jpg"
+    },
+    {
+      "frame_index": 29,
+      "timestamp_seconds": 28.0,
+      "path": "/content/charades_frames/4G3ZF/0028.jpg"
+    },
+    {
+      "frame_index": 30,
+      "timestamp_seconds": 29.0,
+      "path": "/content/charades_frames/4G3ZF/0029.jpg"
+    },
+    {
+      "frame_index": 31,
+      "timestamp_seconds": 30.0,
+      "path": "/content/charades_frames/4G3ZF/0030.jpg"
+    },
+    {
+      "frame_index": 32,
+      "timestamp_seconds": 31.0,
+      "path": "/content/charades_frames/4G3ZF/0031.jpg"
+    },
+    {
+      "frame_index": 33,
+      "timestamp_seconds": 32.0,
+      "path": "/content/charades_frames/4G3ZF/0032.jpg"
+    }
+  ],
+  "BQ963": [
+    {
+      "frame_index": 1,
+      "timestamp_seconds": 0.0,
+      "path": "/content/charades_frames/BQ963/0000.jpg"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_seconds": 1.0,
+      "path": "/content/charades_frames/BQ963/0001.jpg"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_seconds": 2.0,
+      "path": "/content/charades_frames/BQ963/0002.jpg"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_seconds": 3.0,
+      "path": "/content/charades_frames/BQ963/0003.jpg"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_seconds": 4.0,
+      "path": "/content/charades_frames/BQ963/0004.jpg"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_seconds": 5.0,
+      "path": "/content/charades_frames/BQ963/0005.jpg"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_seconds": 6.0,
+      "path": "/content/charades_frames/BQ963/0006.jpg"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_seconds": 7.0,
+      "path": "/content/charades_frames/BQ963/0007.jpg"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_seconds": 8.0,
+      "path": "/content/charades_frames/BQ963/0008.jpg"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_seconds": 9.0,
+      "path": "/content/charades_frames/BQ963/0009.jpg"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_seconds": 10.0,
+      "path": "/content/charades_frames/BQ963/0010.jpg"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_seconds": 11.0,
+      "path": "/content/charades_frames/BQ963/0011.jpg"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_seconds": 12.0,
+      "path": "/content/charades_frames/BQ963/0012.jpg"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_seconds": 13.0,
+      "path": "/content/charades_frames/BQ963/0013.jpg"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_seconds": 14.0,
+      "path": "/content/charades_frames/BQ963/0014.jpg"
+    },
+    {
+      "frame_index": 16,
+      "timestamp_seconds": 15.0,
+      "path": "/content/charades_frames/BQ963/0015.jpg"
+    },
+    {
+      "frame_index": 17,
+      "timestamp_seconds": 16.0,
+      "path": "/content/charades_frames/BQ963/0016.jpg"
+    },
+    {
+      "frame_index": 18,
+      "timestamp_seconds": 17.0,
+      "path": "/content/charades_frames/BQ963/0017.jpg"
+    },
+    {
+      "frame_index": 19,
+      "timestamp_seconds": 18.0,
+      "path": "/content/charades_frames/BQ963/0018.jpg"
+    },
+    {
+      "frame_index": 20,
+      "timestamp_seconds": 19.0,
+      "path": "/content/charades_frames/BQ963/0019.jpg"
+    },
+    {
+      "frame_index": 21,
+      "timestamp_seconds": 20.0,
+      "path": "/content/charades_frames/BQ963/0020.jpg"
+    },
+    {
+      "frame_index": 22,
+      "timestamp_seconds": 21.0,
+      "path": "/content/charades_frames/BQ963/0021.jpg"
+    },
+    {
+      "frame_index": 23,
+      "timestamp_seconds": 22.0,
+      "path": "/content/charades_frames/BQ963/0022.jpg"
+    },
+    {
+      "frame_index": 24,
+      "timestamp_seconds": 23.0,
+      "path": "/content/charades_frames/BQ963/0023.jpg"
+    },
+    {
+      "frame_index": 25,
+      "timestamp_seconds": 24.0,
+      "path": "/content/charades_frames/BQ963/0024.jpg"
+    },
+    {
+      "frame_index": 26,
+      "timestamp_seconds": 25.0,
+      "path": "/content/charades_frames/BQ963/0025.jpg"
+    },
+    {
+      "frame_index": 27,
+      "timestamp_seconds": 26.0,
+      "path": "/content/charades_frames/BQ963/0026.jpg"
+    },
+    {
+      "frame_index": 28,
+      "timestamp_seconds": 27.0,
+      "path": "/content/charades_frames/BQ963/0027.jpg"
+    },
+    {
+      "frame_index": 29,
+      "timestamp_seconds": 28.0,
+      "path": "/content/charades_frames/BQ963/0028.jpg"
+    },
+    {
+      "frame_index": 30,
+      "timestamp_seconds": 29.0,
+      "path": "/content/charades_frames/BQ963/0029.jpg"
+    },
+    {
+      "frame_index": 31,
+      "timestamp_seconds": 30.0,
+      "path": "/content/charades_frames/BQ963/0030.jpg"
+    }
+  ],
+  "Q7TXX": [
+    {
+      "frame_index": 1,
+      "timestamp_seconds": 0.0,
+      "path": "/content/charades_frames/Q7TXX/0000.jpg"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_seconds": 1.0,
+      "path": "/content/charades_frames/Q7TXX/0001.jpg"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_seconds": 2.0,
+      "path": "/content/charades_frames/Q7TXX/0002.jpg"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_seconds": 3.0,
+      "path": "/content/charades_frames/Q7TXX/0003.jpg"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_seconds": 4.0,
+      "path": "/content/charades_frames/Q7TXX/0004.jpg"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_seconds": 5.0,
+      "path": "/content/charades_frames/Q7TXX/0005.jpg"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_seconds": 6.0,
+      "path": "/content/charades_frames/Q7TXX/0006.jpg"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_seconds": 7.0,
+      "path": "/content/charades_frames/Q7TXX/0007.jpg"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_seconds": 8.0,
+      "path": "/content/charades_frames/Q7TXX/0008.jpg"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_seconds": 9.0,
+      "path": "/content/charades_frames/Q7TXX/0009.jpg"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_seconds": 10.0,
+      "path": "/content/charades_frames/Q7TXX/0010.jpg"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_seconds": 11.0,
+      "path": "/content/charades_frames/Q7TXX/0011.jpg"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_seconds": 12.0,
+      "path": "/content/charades_frames/Q7TXX/0012.jpg"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_seconds": 13.0,
+      "path": "/content/charades_frames/Q7TXX/0013.jpg"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_seconds": 14.0,
+      "path": "/content/charades_frames/Q7TXX/0014.jpg"
+    },
+    {
+      "frame_index": 16,
+      "timestamp_seconds": 15.0,
+      "path": "/content/charades_frames/Q7TXX/0015.jpg"
+    },
+    {
+      "frame_index": 17,
+      "timestamp_seconds": 16.0,
+      "path": "/content/charades_frames/Q7TXX/0016.jpg"
+    },
+    {
+      "frame_index": 18,
+      "timestamp_seconds": 17.0,
+      "path": "/content/charades_frames/Q7TXX/0017.jpg"
+    },
+    {
+      "frame_index": 19,
+      "timestamp_seconds": 18.0,
+      "path": "/content/charades_frames/Q7TXX/0018.jpg"
+    },
+    {
+      "frame_index": 20,
+      "timestamp_seconds": 19.0,
+      "path": "/content/charades_frames/Q7TXX/0019.jpg"
+    },
+    {
+      "frame_index": 21,
+      "timestamp_seconds": 20.0,
+      "path": "/content/charades_frames/Q7TXX/0020.jpg"
+    },
+    {
+      "frame_index": 22,
+      "timestamp_seconds": 21.0,
+      "path": "/content/charades_frames/Q7TXX/0021.jpg"
+    },
+    {
+      "frame_index": 23,
+      "timestamp_seconds": 22.0,
+      "path": "/content/charades_frames/Q7TXX/0022.jpg"
+    },
+    {
+      "frame_index": 24,
+      "timestamp_seconds": 23.0,
+      "path": "/content/charades_frames/Q7TXX/0023.jpg"
+    },
+    {
+      "frame_index": 25,
+      "timestamp_seconds": 24.0,
+      "path": "/content/charades_frames/Q7TXX/0024.jpg"
+    },
+    {
+      "frame_index": 26,
+      "timestamp_seconds": 25.0,
+      "path": "/content/charades_frames/Q7TXX/0025.jpg"
+    },
+    {
+      "frame_index": 27,
+      "timestamp_seconds": 26.0,
+      "path": "/content/charades_frames/Q7TXX/0026.jpg"
+    },
+    {
+      "frame_index": 28,
+      "timestamp_seconds": 27.0,
+      "path": "/content/charades_frames/Q7TXX/0027.jpg"
+    },
+    {
+      "frame_index": 29,
+      "timestamp_seconds": 28.0,
+      "path": "/content/charades_frames/Q7TXX/0028.jpg"
+    },
+    {
+      "frame_index": 30,
+      "timestamp_seconds": 29.0,
+      "path": "/content/charades_frames/Q7TXX/0029.jpg"
+    },
+    {
+      "frame_index": 31,
+      "timestamp_seconds": 30.0,
+      "path": "/content/charades_frames/Q7TXX/0030.jpg"
+    }
+  ],
+  "U4J2Q": [
+    {
+      "frame_index": 1,
+      "timestamp_seconds": 0.0,
+      "path": "/content/charades_frames/U4J2Q/0000.jpg"
+    },
+    {
+      "frame_index": 2,
+      "timestamp_seconds": 1.0,
+      "path": "/content/charades_frames/U4J2Q/0001.jpg"
+    },
+    {
+      "frame_index": 3,
+      "timestamp_seconds": 2.0,
+      "path": "/content/charades_frames/U4J2Q/0002.jpg"
+    },
+    {
+      "frame_index": 4,
+      "timestamp_seconds": 3.0,
+      "path": "/content/charades_frames/U4J2Q/0003.jpg"
+    },
+    {
+      "frame_index": 5,
+      "timestamp_seconds": 4.0,
+      "path": "/content/charades_frames/U4J2Q/0004.jpg"
+    },
+    {
+      "frame_index": 6,
+      "timestamp_seconds": 5.0,
+      "path": "/content/charades_frames/U4J2Q/0005.jpg"
+    },
+    {
+      "frame_index": 7,
+      "timestamp_seconds": 6.0,
+      "path": "/content/charades_frames/U4J2Q/0006.jpg"
+    },
+    {
+      "frame_index": 8,
+      "timestamp_seconds": 7.0,
+      "path": "/content/charades_frames/U4J2Q/0007.jpg"
+    },
+    {
+      "frame_index": 9,
+      "timestamp_seconds": 8.0,
+      "path": "/content/charades_frames/U4J2Q/0008.jpg"
+    },
+    {
+      "frame_index": 10,
+      "timestamp_seconds": 9.0,
+      "path": "/content/charades_frames/U4J2Q/0009.jpg"
+    },
+    {
+      "frame_index": 11,
+      "timestamp_seconds": 10.0,
+      "path": "/content/charades_frames/U4J2Q/0010.jpg"
+    },
+    {
+      "frame_index": 12,
+      "timestamp_seconds": 11.0,
+      "path": "/content/charades_frames/U4J2Q/0011.jpg"
+    },
+    {
+      "frame_index": 13,
+      "timestamp_seconds": 12.0,
+      "path": "/content/charades_frames/U4J2Q/0012.jpg"
+    },
+    {
+      "frame_index": 14,
+      "timestamp_seconds": 13.0,
+      "path": "/content/charades_frames/U4J2Q/0013.jpg"
+    },
+    {
+      "frame_index": 15,
+      "timestamp_seconds": 14.0,
+      "path": "/content/charades_frames/U4J2Q/0014.jpg"
+    },
+    {
+      "frame_index": 16,
+      "timestamp_seconds": 15.0,
+      "path": "/content/charades_frames/U4J2Q/0015.jpg"
+    },
+    {
+      "frame_index": 17,
+      "timestamp_seconds": 16.0,
+      "path": "/content/charades_frames/U4J2Q/0016.jpg"
+    },
+    {
+      "frame_index": 18,
+      "timestamp_seconds": 17.0,
+      "path": "/content/charades_frames/U4J2Q/0017.jpg"
+    },
+    {
+      "frame_index": 19,
+      "timestamp_seconds": 18.0,
+      "path": "/content/charades_frames/U4J2Q/0018.jpg"
+    },
+    {
+      "frame_index": 20,
+      "timestamp_seconds": 19.0,
+      "path": "/content/charades_frames/U4J2Q/0019.jpg"
+    },
+    {
+      "frame_index": 21,
+      "timestamp_seconds": 20.0,
+      "path": "/content/charades_frames/U4J2Q/0020.jpg"
+    },
+    {
+      "frame_index": 22,
+      "timestamp_seconds": 21.0,
+      "path": "/content/charades_frames/U4J2Q/0021.jpg"
+    },
+    {
+      "frame_index": 23,
+      "timestamp_seconds": 22.0,
+      "path": "/content/charades_frames/U4J2Q/0022.jpg"
+    },
+    {
+      "frame_index": 24,
+      "timestamp_seconds": 23.0,
+      "path": "/content/charades_frames/U4J2Q/0023.jpg"
+    },
+    {
+      "frame_index": 25,
+      "timestamp_seconds": 24.0,
+      "path": "/content/charades_frames/U4J2Q/0024.jpg"
+    },
+    {
+      "frame_index": 26,
+      "timestamp_seconds": 25.0,
+      "path": "/content/charades_frames/U4J2Q/0025.jpg"
+    },
+    {
+      "frame_index": 27,
+      "timestamp_seconds": 26.0,
+      "path": "/content/charades_frames/U4J2Q/0026.jpg"
+    },
+    {
+      "frame_index": 28,
+      "timestamp_seconds": 27.0,
+      "path": "/content/charades_frames/U4J2Q/0027.jpg"
+    },
+    {
+      "frame_index": 29,
+      "timestamp_seconds": 28.0,
+      "path": "/content/charades_frames/U4J2Q/0028.jpg"
+    },
+    {
+      "frame_index": 30,
+      "timestamp_seconds": 29.0,
+      "path": "/content/charades_frames/U4J2Q/0029.jpg"
+    },
+    {
+      "frame_index": 31,
+      "timestamp_seconds": 30.0,
+      "path": "/content/charades_frames/U4J2Q/0030.jpg"
+    }
+  ]
+}
