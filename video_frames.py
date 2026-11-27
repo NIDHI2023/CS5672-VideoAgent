@@ -2,6 +2,84 @@
 import cv2
 import numpy as np
 from PIL import Image
+from pathlib import Path
+import torch
+from transformers import (
+    Qwen2_5_VLForConditionalGeneration,
+    AutoProcessor,
+)
+from qwen_vl_utils import process_vision_info
+
+CAPTION_MODEL_ID = "Qwen/Qwen2.5-VL-3B-Instruct"
+
+caption_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+    CAPTION_MODEL_ID,
+    torch_dtype=torch.float16,
+    device_map="auto",
+).eval()
+
+caption_processor = AutoProcessor.from_pretrained(
+    CAPTION_MODEL_ID,
+    min_pixels=128 * 28 * 28,
+    max_pixels=256 * 28 * 28,
+)
+
+print("GPU:", torch.cuda.get_device_name(0))
+
+CAPTION_PROMPT = (
+    "Describe this video frame in one concise factual sentence. "
+    "Include the visible people, objects, actions, and important "
+    "spatial relationships. Do not speculate about events outside "
+    "the frame. Do not include introductory text."
+)
+
+@torch.inference_mode()
+def caption_frame(frame_path):
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image",
+                    "image": Path(frame_path).resolve().as_uri(),
+                },
+                {
+                    "type": "text",
+                    "text": CAPTION_PROMPT,
+                },
+            ],
+        }
+    ]
+
+    prompt = caption_processor.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+
+    image_inputs, video_inputs = process_vision_info(messages)
+
+    inputs = caption_processor(
+        text=[prompt],
+        images=image_inputs,
+        videos=video_inputs,
+        padding=True,
+        return_tensors="pt",
+    ).to("cuda")
+
+    generated = caption_model.generate(
+        **inputs,
+        max_new_tokens=64,
+        do_sample=False,
+    )
+
+    generated = generated[:, inputs.input_ids.shape[1]:]
+
+    return caption_processor.batch_decode(
+        generated,
+        skip_special_tokens=True,
+        clean_up_tokenization_spaces=False,
+    )[0].strip()
 
 
 def extract_frames(video_path, output_dir, sample_fps=1):
